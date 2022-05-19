@@ -6,6 +6,10 @@ exercise1 = Exercise.create(name: "Incline Bench Press", category: "Chest", inst
 exercise2 = Exercise.create(name: "Standing Incline Cable Fly", category: "Chest", instructions: "Lean forwward slightly and pull cables upward squezing chest muscles at the top the pull")
 
 puts "🏕 Seeding workouts..."
-workout1 = Workout.create(name: "Chest Day",)
+workout1= Workout.create(name: "Chest Day", difficulty: 3)
+
+puts "🏕 Seeding workout exercises..."
+WorkoutExercise.create(workout_id: 1, exercise_id: 1)
+WorkoutExercise.create(workout_id: 1, exercise_id: 2)
 
 puts "✅ Done seeding!"
