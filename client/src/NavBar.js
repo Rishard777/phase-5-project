@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import './Nav.css';
 
 
 function NavBar ({onLogout}) {
@@ -14,20 +15,14 @@ function NavBar ({onLogout}) {
       }
 
      return (
-         <div>
-             <nav>
-             
+         <div className="navbar">
              <Link to="/">Home</Link>
 
-           <Link to="/login">Log In</Link>
+            <Link to="/login">Log In</Link>
+              
 
-            <button onClick={handleLogout}>Log out</button> 
+          <button className="logout" onClick={handleLogout}>Log out</button> 
 
-             
-                
-
-            
-             </nav>
          </div>
      )
 }
