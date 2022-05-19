@@ -31,12 +31,11 @@ function LoginForm( {onLogin} ) {
               r.json().then((err) => setError(err.error));
             }
           });
-
-       
-      }
+        }
 
 return (
     <div>
+      
       <h1>Log in</h1>
         <form onSubmit={handleSignIn}>
             <input
