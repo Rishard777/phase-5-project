@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function LoginForm( {onLogin}) {
+function LoginForm( {onLogin} ) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState([])
+   
+
+    const navigate = useNavigate();
 
     function handleSignIn(e) {
         e.preventDefault();
@@ -22,17 +26,19 @@ function LoginForm( {onLogin}) {
             if (r.ok) {
               r.json()
               .then((user) => onLogin(user));
-           
+             navigate("/")
             } else {
               r.json().then((err) => setError(err.error));
             }
           });
+
+       
       }
 
 return (
     <div>
       <h1>Log in</h1>
-        <form>
+        <form onSubmit={handleSignIn}>
             <input
             type="text"
             value={username}
@@ -47,7 +53,7 @@ return (
             placeholder="Password"
             />
             <p></p>
-            <button onClick={handleSignIn}>Login</button>
+            <button>Login</button>
 
             {error ? <div>{error}</div> : null}
         </form>
