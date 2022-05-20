@@ -11,9 +11,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 function App() {
   const [user, setUser] = useState(null);
  
-
-
-
   useEffect(() => {
     fetch("/me").then((response) => {
       if (response.ok) {
@@ -51,20 +48,6 @@ return (
       </BrowserRouter>
       </div>
     )
- 
-
-// if(user){
-//   return (
-//     <div className="App">
-//       Welcome!
-//     </div>
-//   )
-// } else
-// return (
-//   <div className="App">
-//     <Login  onLogin={handleLogin} history={history} />
-//   </div>
-// );
 }
 
 export default App;

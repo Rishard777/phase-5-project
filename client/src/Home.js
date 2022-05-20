@@ -18,6 +18,8 @@ function Home() {
     return (
     
         <div className="home">
+          <h1>About Us</h1>
+          <p></p>
             <h1>Workouts</h1>
           {renderWorkouts}
           </div>

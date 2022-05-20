@@ -1,5 +1,6 @@
 .workoutcards {
     display: inline-flex;
+    padding-top: 20%;
 }
 .workoutcard {
 background-color: white;
@@ -22,4 +23,5 @@ transition: 0.2s;
 
 .home {
     background-color: gray;
+    display:contents
 }
