@@ -1,5 +1,6 @@
 import WorkoutCard from './WorkoutCard';
 import React, {useState, useEffect} from "react";
+import './Workout.css';
 
 function Home() {
     const [workouts, setWorkouts] = useState([])
@@ -16,7 +17,7 @@ function Home() {
       
     return (
     
-        <div>
+        <div className="home">
             <h1>Workouts</h1>
           {renderWorkouts}
           </div>

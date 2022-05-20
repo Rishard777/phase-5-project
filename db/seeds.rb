@@ -7,9 +7,11 @@ exercise2 = Exercise.create(name: "Standing Incline Cable Fly", category: "Chest
 
 puts "🏕 Seeding workouts..."
 workout1= Workout.create(name: "Chest Day", difficulty: 3)
+workout2= Workout.create(name: "Shoulders", difficulty: 3)
 
 puts "🏕 Seeding workout exercises..."
 WorkoutExercise.create(workout_id: 1, exercise_id: 1)
 WorkoutExercise.create(workout_id: 1, exercise_id: 2)
+
 
 puts "✅ Done seeding!"

@@ -4,10 +4,11 @@ import './Workout.css';
 function WorkoutCard({workout}) {
   const {name, difficulty} = workout
     return (
-        <div className="workoutcard">
-          
+        <div className="workoutcards">
+          <div className="workoutcard">
             <p>name: {name}</p>
             <p>difficulty: {difficulty}</p>
+            </div>
         </div>
     )
 }

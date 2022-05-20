@@ -1,4 +1,25 @@
+.workoutcards {
+    display: inline-flex;
+}
 .workoutcard {
-    border: solid;
-    width: 25%;
+background-color: white;
+border-radius: 1rem;
+padding: 2rem;
+margin-left: -2rem;
+box-shadow: 4px 4px 12px 12px;
+place-items: center;
+transition: 0.2s;
+}
+
+.workoutcard:hover{ 
+
+    transform:translateY(-1rem);
+}
+
+.workoutcard:hover ~ {
+   transform:translateX(4rem);
+}
+
+.home {
+    background-color: gray;
 }
