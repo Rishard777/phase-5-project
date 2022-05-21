@@ -20,6 +20,7 @@ function NavBar ({onLogout}) {
 
             <Link to="/login">Log In</Link>
               
+              <Link to="/users/:id">Workout Plan</Link>
 
           <button className="logout" onClick={handleLogout}>Log out</button> 
 

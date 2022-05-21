@@ -1,6 +1,14 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_response
-rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_response  
+rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_response 
+
+before_action :authorize
+skip_before_action :authorize, only: [:index, :create]
+
+    def index
+        render json: User.all
+    end
+
     def create
         user = User.create!(user_params)
         render json: user, status: :created
@@ -9,9 +17,9 @@ rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_response
     def show
         user = User.find_by(id: session[:user_id])
         if user
-            render json: user
+            render json: user, serializer: UserWithWorkoutPlansSerializer
         else
-            render json: { error: "Not authorized" }, status: :unauthorized
+            render json: { error: "Please Sign In" }, status: :unauthorized
         end
     end
 
@@ -27,4 +35,8 @@ rescue_from ActiveRecord::RecordInvalid, with: :unprocessable_entity_response
     def record_not_found_response
         render json: {error: "User not found"}, status: :not_found
     end
+
+    def authorize
+        return render json: { error: "Please Sign In" }, status: :unauthorized unless session.include? :user_id
+      end
 end

@@ -12,7 +12,7 @@ function Home() {
       },[])
 
       const renderWorkouts = workouts.map((workout) => {
-        return <WorkoutCard key={workout.id} workout={workout} />;
+        return <WorkoutCard key={workout.id} workout={workout} workouts={workouts} />;
       });
       
     return (

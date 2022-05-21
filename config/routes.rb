@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :workout_exercises
   resources :exercises
   resources :workouts
-  resources :users
+  resources :users, only: [:index, :show, :create]
 
   post "/login", to: "sessions#create"
   post "signup", to: "users#create"

@@ -6,10 +6,12 @@ import Home from './Home';
 import NavBar from './NavBar';
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import WorkoutPlan from './WorkoutPlan';
 
 
 function App() {
   const [user, setUser] = useState(null);
+  const [error, setError] = useState([])
  
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -38,8 +40,9 @@ return (
 
         <Route exact path="/" element={<Home />}/>
         
+        <Route exact path ="/users/:id" element={<WorkoutPlan user={user} setUser={setUser} />}/>
     
-         <Route exact path="/login" element={<Login onLogin={handleLogin} user={user} />}/>
+         <Route exact path="/login" element={<Login onLogin={handleLogin}  />}/>
           
       
 
