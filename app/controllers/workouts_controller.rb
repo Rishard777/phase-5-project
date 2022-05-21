@@ -6,7 +6,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_response
 
     def show
         workout = Workout.find(params[:id])
-        render json: workout, serializer: :WorkoutWithExercisesSerializer
+        render json: workout, serializer: WorkoutWithExercisesSerializer
     end
 
     private

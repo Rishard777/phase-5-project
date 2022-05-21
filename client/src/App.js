@@ -7,6 +7,7 @@ import NavBar from './NavBar';
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import WorkoutPlan from './WorkoutPlan';
+import Exercises from './Exercises'
 
 
 function App() {
@@ -44,7 +45,7 @@ return (
     
          <Route exact path="/login" element={<Login onLogin={handleLogin}  />}/>
           
-      
+        <Route exact path="/workouts/:id" element={<Exercises />}/>
 
       </Routes>
   
