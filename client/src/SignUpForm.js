@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function SignUpForm({onLogin}) {
     const [username, setUsername] = useState("");
@@ -7,6 +8,8 @@ function SignUpForm({onLogin}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
+
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -28,6 +31,7 @@ function SignUpForm({onLogin}) {
           if (r.ok) {
             r.json()
             .then((user) => onLogin(user));
+            navigate("/")
           } else {
             r.json().then((err) => setErrors(err.errors));
           }

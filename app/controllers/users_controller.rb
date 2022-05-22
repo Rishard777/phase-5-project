@@ -17,7 +17,7 @@ skip_before_action :authorize, only: [:index, :create]
     def show
         user = User.find_by(id: session[:user_id])
         if user
-            render json: user, serializer: UserWithWorkoutPlansSerializer
+            render json: user, serializer: UserWithWorkoutsSerializer
         else
             render json: { error: "Please Sign In" }, status: :unauthorized
         end

@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2022_05_20_212246) do
   end
 
   create_table "workout_plans", force: :cascade do |t|
-    t.string "date"
+    t.date "date"
     t.bigint "user_id", null: false
     t.bigint "workout_id", null: false
     t.datetime "created_at", precision: 6, null: false

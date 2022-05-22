@@ -15,7 +15,8 @@ WorkoutExercise.create(workout_id: 1, exercise_id: 1)
 WorkoutExercise.create(workout_id: 1, exercise_id: 2)
 
 puts "🏕 Seeding workout plans..."
-WorkoutPlan.create(user_id: 1, workout_id: 1, date: "5-23-22")
+WorkoutPlan.create(user_id: 1, workout_id: 1, date: "2022-05-23")
+WorkoutPlan.create(user_id: 1, workout_id: 2, date: "2022-05-23")
 
 
 puts "✅ Done seeding!"

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from "react-router";
+import WorkoutForm from "./WorkoutForm";
 
 
 function WorkoutPlan() {
@@ -24,14 +25,16 @@ function WorkoutPlan() {
         });
       }, [id]);
 
-      function handleAddWorkoutPlan(newWorkoutPlan) {
+      function handleAddWorkout(newWorkout) {
         setUser({
           error,
           status,
           data: {
             ...user,
-            workout_plans: [...user.workout_plans, newWorkoutPlan],
+            workouts: [...user.workouts, newWorkout],
           },
+          error: null,
+          status: "resolved",
         });
       }
 
@@ -41,13 +44,18 @@ function WorkoutPlan() {
     return (
         <div>
             <h2>{user.username}'s Workout Plan</h2>
-            <ul>
-        {user.workout_plans.map((workout_plan) => (
-          <li key={workout_plan.id}>
-            {workout_plan.date} {workout_plan.workout}
-          </li>
+            <div>
+        {user.workouts.map((workout) => (
+          <div key={workout.id}>
+            name: {workout.name} difficulty: {workout.difficulty}
+          </div>
         ))}
-      </ul>
+      
+      </div>
+      <div className="Card">
+          <h3>Add Workout</h3>
+          <WorkoutForm userId={user.id} onAddWorkout={handleAddWorkout} />
+      </div>
         </div>
     )
 }

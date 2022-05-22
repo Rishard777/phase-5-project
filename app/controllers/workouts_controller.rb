@@ -9,6 +9,11 @@ rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_response
         render json: workout, serializer: WorkoutWithExercisesSerializer
     end
 
+    def destroy
+        workout = Workout.find(params[:id])
+        workout.destroy
+    end
+
     private
     def record_not_found_response
         render json: {error: "NotFound"}, status: :not_found
