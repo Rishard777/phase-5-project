@@ -5,9 +5,19 @@ def index
     render json: WorkoutPlan.all
 end
 
+def show
+    wp = WorkoutPlan.find(params[:id])
+    render json: wp, status: :ok
+end
+
 def create
     wp = WorkoutPlan.create!(workout_params)
     render json: wp.workout, status: :created
+end
+
+def destroy
+    workout = WorkoutPlan.find(params[:id])
+    workout.destroy
 end
 
 private
