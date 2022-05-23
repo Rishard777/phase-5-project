@@ -4,6 +4,7 @@ import WorkoutForm from "./WorkoutForm";
 
 
 function WorkoutPlan() {
+    
     const [{ data: user, error, status }, setUser] = useState({
         data: null,
         error: null,
@@ -38,6 +39,7 @@ function WorkoutPlan() {
         });
       }
 
+     
       if (status === "pending") return <h2>Loading...</h2>;
       if (status === "rejected") return <h2>Error: {error}</h2>;
 
@@ -48,12 +50,13 @@ function WorkoutPlan() {
         {user.workouts.map((workout) => (
           <div key={workout.id}>
             name: {workout.name} difficulty: {workout.difficulty}
+
           </div>
         ))}
       
       </div>
       <div className="Card">
-          <h3>Add Workout</h3>
+          <h3>Schedule Workouts</h3>
           <WorkoutForm userId={user.id} onAddWorkout={handleAddWorkout} />
       </div>
         </div>

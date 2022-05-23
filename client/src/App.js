@@ -12,7 +12,7 @@ import Exercises from './Exercises'
 
 function App() {
   const [user, setUser] = useState(null);
-  const [error, setError] = useState([])
+  
  
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -38,20 +38,15 @@ return (
       <NavBar onLogout={handleLogout} user={user}/>
    
       <Routes>
-
         <Route exact path="/" element={<Home />}/>
-        
         <Route exact path ="/users/:id" element={<WorkoutPlan user={user} setUser={setUser} />}/>
-    
-         <Route exact path="/login" element={<Login onLogin={handleLogin}  />}/>
-          
+        <Route exact path="/login" element={<Login onLogin={handleLogin}  />}/>
         <Route exact path="/workouts/:id" element={<Exercises />}/>
-
       </Routes>
   
       </BrowserRouter>
-      </div>
-    )
+  </div>
+      )
 }
 
 export default App;
