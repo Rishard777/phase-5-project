@@ -42,7 +42,7 @@ return (
       <Routes>
         <Route exact path="/" element={<Home favorites={favorites} setFavorites={setFavorites} />}/>
         <Route exact path ="/users/:id" element={<WorkoutPlan user={user} setUser={setUser} />}/>
-        <Route exact path="/login" element={<Login onLogin={handleLogin}  />}/>
+        <Route exact path="/login" element={<Login onLogin={handleLogin} user={user}  />}/>
         <Route exact path="/workouts/:id" element={<Exercises />}/>
         <Route exact path="/favorites" element={<Favorites favorites={favorites} setFavorites={setFavorites} />}/>
       </Routes>
