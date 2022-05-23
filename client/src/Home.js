@@ -2,7 +2,7 @@ import WorkoutCard from './WorkoutCard';
 import React, {useState, useEffect} from "react";
 import './Workout.css';
 
-function Home() {
+function Home({setFavorites}) {
     const [workouts, setWorkouts] = useState([])
 
     useEffect(() => {
@@ -12,7 +12,7 @@ function Home() {
       },[])
 
       const renderWorkouts = workouts.map((workout) => {
-        return <WorkoutCard key={workout.id} workout={workout} workouts={workouts} />;
+        return <WorkoutCard key={workout.id} workout={workout} workouts={workouts} setFavorites={setFavorites} />;
       });
       
     return (

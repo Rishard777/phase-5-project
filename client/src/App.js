@@ -8,9 +8,11 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import WorkoutPlan from './WorkoutPlan';
 import Exercises from './Exercises'
+import Favorites from './Favorites'
 
 
 function App() {
+  const [favorites, setFavorites] = useState([]);
   const [user, setUser] = useState(null);
   
  
@@ -38,10 +40,11 @@ return (
       <NavBar onLogout={handleLogout} user={user}/>
    
       <Routes>
-        <Route exact path="/" element={<Home />}/>
+        <Route exact path="/" element={<Home favorites={favorites} setFavorites={setFavorites} />}/>
         <Route exact path ="/users/:id" element={<WorkoutPlan user={user} setUser={setUser} />}/>
         <Route exact path="/login" element={<Login onLogin={handleLogin}  />}/>
         <Route exact path="/workouts/:id" element={<Exercises />}/>
+        <Route exact path="/favorites" element={<Favorites favorites={favorites} setFavorites={setFavorites} />}/>
       </Routes>
   
       </BrowserRouter>
