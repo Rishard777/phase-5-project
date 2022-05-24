@@ -17,11 +17,14 @@ function NavBar ({onLogout, user}) {
      return (
          <div className="navbar">
               <Link to="/">Home</Link>
+              <Link to="/favorites">Favorites</Link>
+              <Link to="/users/:id">Workout Plan</Link>
               {user ? <button className="logout" onClick={handleLogout}>Log out</button> : 
               <Link to="/login">Log In</Link>
               }
-              <Link to="/users/:id">Workout Plan</Link>
-              <Link to="/favorites">Favorites</Link>
+              
+              
+              
               
          </div>
      )

@@ -12,7 +12,7 @@ function Home({setFavorites}) {
       },[])
 
       const renderWorkouts = workouts.map((workout) => {
-        return <WorkoutCard key={workout.id} workout={workout} workouts={workouts} setFavorites={setFavorites} />;
+        return <WorkoutCard key={workout.id} workout={workout} workouts={workouts} setWorkouts={setWorkouts} setFavorites={setFavorites} />;
       });
       
     return (

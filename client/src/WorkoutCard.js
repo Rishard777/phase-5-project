@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Workout.css';
 import { Link } from "react-router-dom";
 
-function WorkoutCard({workout, setFavorites}) {
+function WorkoutCard({workout, setFavorites, workouts, setWorkouts}) {
   const [favorited, setFavorited] = useState(false);
   const {name, difficulty} = workout
 
@@ -14,6 +14,18 @@ function WorkoutCard({workout, setFavorites}) {
       setFavorites((prevState) => [...prevState, workout]);
       setFavorited(true);
     }
+  }
+
+  function handleDelete(id) {
+    fetch(`/workouts/${id}`, {
+      method: "DELETE",
+    }).then((r) => {
+      if (r.ok) {
+        setWorkouts((workouts) =>
+          workouts.filter((workout) => workout.id !== id)
+        );
+      }
+    });
   }
     return (
         <div className="workoutcards">
@@ -27,6 +39,8 @@ function WorkoutCard({workout, setFavorites}) {
               onClick={handleAddToFavorites}>
                 {favorited ? "★" : "☆"}
             </button>
+            <p></p>
+            <button onClick={() => handleDelete(workout.id)}>Delete</button>
           </div>
         </div>
     )
