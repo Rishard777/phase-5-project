@@ -1,6 +1,8 @@
 import WorkoutCard from './WorkoutCard';
 import React, {useState, useEffect} from "react";
 import './Workout.css';
+import './Home.css'
+import video from './video/gymVid.mp4'
 
 function Home({setFavorites}) {
     const [workouts, setWorkouts] = useState([])
@@ -18,7 +20,17 @@ function Home({setFavorites}) {
     return (
     
         <div className="home">
-          <h1>About Us</h1>
+          <div>
+            <h1>About Us</h1>
+          </div>
+          <div className="mainVideo">
+            <video
+            type="video/mp4"
+            src={video}
+            loop
+            muted
+            autoPlay />
+          </div>
           <p></p>
             <h1>Workouts</h1>
           {renderWorkouts}
