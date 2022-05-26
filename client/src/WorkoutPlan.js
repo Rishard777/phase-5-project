@@ -32,7 +32,8 @@ function WorkoutPlan() {
           status,
           data: {
             ...user,
-            workouts: [...user.workouts, newWorkout],
+           
+            workout_plans: [...user.workout_plans, newWorkout],
           },
           error: null,
           status: "resolved",
@@ -46,15 +47,22 @@ function WorkoutPlan() {
     return (
         <div>
             <h1 className="workoutPlan">{user.username}'s Workout Plan</h1>
-            <div>
-        {user.workouts.map((workout) => (
-          <div key={workout.id} className="workoutDetails">
-            name: {workout.name} difficulty: {workout.difficulty}
+            <div className="name_date">
+              {user.workouts.map((workout) => (
+                <div key={workout.id} className="workoutDetails">
+                  name: {workout.name}
+                </div>
+              ))}
+            </div>
 
-          </div>
-        ))}
+            <div className="name_date">
+              {user.workout_plans.map((workout_plan) => (
+                <div key={workout_plan.id} className="workoutDetails">
+                  date: {workout_plan.date}
+                </div>
+              ))}
+            </div>
       
-      </div>
       <div className="Card">
           <h1 className="workoutPlan">Schedule Workouts</h1>
           <WorkoutForm userId={user.id} onAddWorkout={handleAddWorkout} />

@@ -51,7 +51,7 @@ function WorkoutForm({userId, onAddWorkout} ) {
                 <option>Select a workout</option>
                 {workouts.map((workout) => (
                     <option key={workout.id} value={workout.id}>
-                          Name: {workout.name} | Difficulty: {workout.difficulty} 
+                          Name: {workout.name}
                     </option>
                 ))}
                   </select>

@@ -12,7 +12,7 @@ end
 
 def create
     wp = WorkoutPlan.create!(workout_params)
-    render json: wp.workout, status: :created
+    render json: wp, status: :created
 end
 
 def destroy
