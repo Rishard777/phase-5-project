@@ -1,6 +1,8 @@
 import { useState } from "react";
 import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
+import './Login.css'
+import image from "./photos/neckart.JPG";   
 
 function Login ({onLogin}, {user} ) {
     const [showLogin, setShowLogin] = useState(true);
@@ -12,8 +14,11 @@ function Login ({onLogin}, {user} ) {
                 <LoginForm onLogin={onLogin} user={user} />
                 <p>
                     Don't have an account?
-                    <button onClick={() => setShowLogin(false)}>Sign up</button>
+                    <button onClick={() => setShowLogin(false)} className="signup_toggle">Sign up</button>
                 </p>
+                <img
+                src={image}
+                className="loginPhoto" />
                </div>
            ) : (
               <div>

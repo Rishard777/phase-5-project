@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './Login.css'
+import image from "./photos/neckart.JPG";
 
 function LoginForm( {onLogin} ) {
     const [username, setUsername] = useState("");
@@ -36,9 +38,10 @@ function LoginForm( {onLogin} ) {
 return (
     <div>
       
-      <h1>Log in</h1>
-        <form onSubmit={handleSignIn}>
+      <h1 className="login_header">Log in</h1>
+        <form className="login_form" onSubmit={handleSignIn}>
             <input
+            className="login_input"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -46,13 +49,15 @@ return (
             />
             <p></p>
             <input
+            className="login_input"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
             />
             <p></p>
-            <button>Login</button>
+
+            <button className="login_button">Login</button>
 
             {error ? <div>{error}</div> : null}
         </form>
