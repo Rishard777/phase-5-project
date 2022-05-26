@@ -6,7 +6,7 @@
 background-color: white;
 border-radius: 0.3rem;
 padding: 2rem;
-margin-left: -2rem;
+margin-left: -2.3rem;
 box-shadow: 4px 4px 12px 12px rgba(212, 125, 75, 0.866);
 place-items: center;
 transition: 0.2s;
@@ -14,16 +14,16 @@ font-family: "Koulen-Regular";
 }
 
 .workoutcard:hover{ 
-
     transform:translateY(-1rem);
-   
 }
 
-.workoutcard:hover + .workoutcard {
-   transform:translateX(4rem);
-}
 
 .home {
     background-color: gray;
     display:contents
+}
+
+.img {
+    width: 230px;
+    height: 260px;
 }
