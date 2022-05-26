@@ -1,0 +1,51 @@
+.workoutPlan {
+    font-family: "Caveat-VariableFont_wght";
+   text-align: right;
+   padding-right: 130px;
+   padding-top: 150px;
+}
+
+.workoutDetails {
+    font-family: "Koulen-Regular";
+    text-align: right;
+    padding-right: 175px;
+}
+
+.workoutForm {
+    padding-bottom: 20px;
+  
+}
+
+.addWorkout {
+    padding-right: 175px;
+ text-align: right;
+}
+
+.workout_heading {
+    font-family: "Caveat-VariableFont_wght";
+    font-size: 50px;
+}
+
+.difficulty {
+    font-size: 25px;
+}
+
+.exercise_name {
+    font-family: "Koulen-Regular";
+}
+
+.card {
+    border-top: solid;
+    border-bottom: solid;
+    padding-bottom: 10px;
+}
+
+.exercise_form {
+    padding-top: 25px;
+}
+
+.workout_exercises {
+    font-family: "Caveat-VariableFont_wght";
+    font-size: 50px;
+    padding-top: 25px;
+}

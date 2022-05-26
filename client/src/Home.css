@@ -1,18 +1,51 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .mainVideo {
     width: 100%;
-    
+    height: 500px;
+    transform:translateY(-1rem);
+}
 
+.overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.5)
 }
 
 video {
     width: 100%;
     height: 500px;
-    object-fit: cover;
-  
+    object-fit: cover; 
+}
+
+.content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: Caveat-VariableFont_wght;
+    font-size: 45px;
+}
+
+.workouts {
+    font-family: Caveat-VariableFont_wght;
+    padding-bottom: 20px;
+    font-size: 50px;
+}
+
+.aboutUs {
+    font-family: Caveat-VariableFont_wght;
+    padding-top: 30px;
+    font-size: 50px;
 }

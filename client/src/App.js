@@ -36,6 +36,7 @@ function handleLogout() {
 
 return (
   <div className="App">
+    <p className="header">Sign up for free today</p>
     <BrowserRouter>
       <NavBar onLogout={handleLogout} user={user}/>
    

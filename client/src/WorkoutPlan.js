@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { useParams } from "react-router";
 import WorkoutForm from "./WorkoutForm";
-
+import "./WorkoutPlan.css";
 
 function WorkoutPlan() {
     
@@ -45,10 +45,10 @@ function WorkoutPlan() {
 
     return (
         <div>
-            <h2>{user.username}'s Workout Plan</h2>
+            <h1 className="workoutPlan">{user.username}'s Workout Plan</h1>
             <div>
         {user.workouts.map((workout) => (
-          <div key={workout.id}>
+          <div key={workout.id} className="workoutDetails">
             name: {workout.name} difficulty: {workout.difficulty}
 
           </div>
@@ -56,7 +56,7 @@ function WorkoutPlan() {
       
       </div>
       <div className="Card">
-          <h3>Schedule Workouts</h3>
+          <h1 className="workoutPlan">Schedule Workouts</h1>
           <WorkoutForm userId={user.id} onAddWorkout={handleAddWorkout} />
       </div>
         </div>

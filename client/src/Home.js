@@ -20,21 +20,30 @@ function Home({setFavorites}) {
     return (
     
         <div className="home">
-          <div>
-            <h1>About Us</h1>
-          </div>
+
+          
+
           <div className="mainVideo">
-            <video
-            type="video/mp4"
-            src={video}
-            loop
-            muted
-            autoPlay />
+            <div className="overlay">
+             <video
+              type="video/mp4"
+              src={video}
+              loop
+              muted
+              autoPlay />
+                <div className="content">
+                  <h1> RTZ Athletics</h1>
+                  <p> Fitness planner</p>
+                </div>
+             </div>
           </div>
-          <p></p>
-            <h1>Workouts</h1>
-          {renderWorkouts}
+          <h1 className="workouts">Workouts</h1>
+          {renderWorkouts} 
+          <div>
+            <h1 className="aboutUs">About Us</h1>
           </div>
+
+        </div>
     )
 }
 

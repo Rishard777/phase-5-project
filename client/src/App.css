@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Caveat-VariableFont_wght";
+  src: url(./fonts/Caveat-VariableFont_wght.ttf)
+}
+
+@font-face {
+  font-family: "Koulen-Regular";
+  src: url(./fonts/Koulen-Regular.ttf);
+}
+
 .App {
   text-align: center;
 }
@@ -6,3 +16,13 @@
 
 
 
+
+.header {
+  text-transform: uppercase;
+  
+  background-image: url(https://64.media.tumblr.com/ad65726d6a8c273801e674100152ae42/tumblr_pbfsu46Bkq1uzwgsuo1_400.gifv);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  font-family: "Koulen-Regular";
+}

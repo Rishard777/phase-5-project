@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./WorkoutPlan.css";
 
 function WorkoutForm({userId, onAddWorkout} ) {
     const [workouts, setWorkouts] = useState([]);
@@ -39,8 +40,8 @@ function WorkoutForm({userId, onAddWorkout} ) {
       }
       
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Workout:</label>
+        <form onSubmit={handleSubmit} className="addWorkout">
+            <label className="workoutForm">Workout:</label>
             <select
             id="workout_id"
             name="workout_id"
@@ -54,6 +55,7 @@ function WorkoutForm({userId, onAddWorkout} ) {
                     </option>
                 ))}
                   </select>
+                  <p className="workoutForm"></p>
                   <label>Date:</label>
                   <input
                   type="date"
@@ -61,6 +63,7 @@ function WorkoutForm({userId, onAddWorkout} ) {
                   onChange={(e) => setDate(e.target.value)}
                   />
                 {formErrors ? <div>{formErrors}</div> : null}
+                <p className="workoutForm"></p>
       <button type="submit">Add To Workout Plan</button>
                 
           

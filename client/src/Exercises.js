@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./WorkoutPlan.css";
 
 function Home() {
     const [{ data: workout, error, status }, setWorkout] = useState({
@@ -30,14 +31,14 @@ function Home() {
      
         <section className="container">
             <div className="card">
-                 <h1>{workout.name}</h1>
-               <p>Difficulty: {workout.difficulty}</p>
+                 <h1 className="workout_heading">Workout: {workout.name}</h1>
+               <p className="difficulty">Difficulty: {workout.difficulty}</p>
             </div>
             <div ClassName="card">
-                <h2>Exercises</h2>
+                <h1 className="workout_exercises">Exercises</h1>
                 {workout.exercises.map((exercise) => (
-                    <div key={exercise.id}>
-                        <h3>{exercise.name} | Category: {exercise.category}</h3>
+                    <div className="exercise_form" key={exercise.id}>
+                        <h2 className="exercise_name">Name: {exercise.name} | Category: {exercise.category}</h2>
                         <p>
                             <em>Instructions: {exercise.instructions}</em>
                         </p>
