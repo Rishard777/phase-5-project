@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import './Login.css'
 
 function SignUpForm({onLogin}) {
     const [username, setUsername] = useState("");
@@ -40,7 +41,7 @@ function SignUpForm({onLogin}) {
 
     return (
         <div>
-            <h1>Sign Up</h1>
+            <h1 className="signup_header">Sign Up</h1>
         <form>
         <input
             type="text"
@@ -49,6 +50,7 @@ function SignUpForm({onLogin}) {
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             placeholder="First name"
+            className="login_input"
             />
             <p></p>
 
@@ -59,6 +61,7 @@ function SignUpForm({onLogin}) {
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             placeholder="Last name"
+            className="login_input"
             />
 
             <p></p>
@@ -70,6 +73,7 @@ function SignUpForm({onLogin}) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
+            className="login_input"
             />
 
             <p></p>
@@ -81,6 +85,7 @@ function SignUpForm({onLogin}) {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Username"
+            className="login_input"
             />
 
             <p></p>
@@ -91,11 +96,12 @@ function SignUpForm({onLogin}) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
+            className="login_input"
             />
 
             <p></p>
 
-            <button onClick={handleSubmit}>Create Account</button>
+            <button className="login_button" onClick={handleSubmit}>Create Account</button>
 
          {errors ? <div>{errors}</div> : null}
         </form>

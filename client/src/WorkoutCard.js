@@ -45,8 +45,8 @@ function WorkoutCard({workout, setFavorites, workouts, setWorkouts}) {
               onClick={handleAddToFavorites}>
                 {favorited ? "★" : "☆"}
             </button>
-            <p></p>
-            <button onClick={() => handleDelete(workout.id)}>Delete</button>
+            <p className="space"></p>
+            <button className="delete" onClick={() => handleDelete(workout.id)}>Delete</button>
           </div>
         </div>
     )

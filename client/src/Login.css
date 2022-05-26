@@ -1,5 +1,5 @@
 .login_input {
-    padding: 12px 20px;
+    padding: 12px 30px;
     margin: 10px 0;
     border: 2px solid rgba(212, 125, 75, 0.866);
     border-radius: 4px;
@@ -44,4 +44,11 @@
 .loginPhoto {
     height: 30%;
     width: 30%;
+}
+
+.signup_header {
+    font-family: "Caveat-VariableFont_wght";
+    font-size: 50px;
+    border-top: solid;
+    border-bottom: solid;
 }

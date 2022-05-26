@@ -46,6 +46,33 @@ video {
 
 .aboutUs {
     font-family: Caveat-VariableFont_wght;
-    padding-top: 30px;
     font-size: 50px;
+    border-bottom: solid;
+    padding-top: 110px;
+    
+}
+
+.about_paragraph {
+    width: 35%;
+    height: 35%;
+    margin-bottom: 35px;
+    padding-top: 50px;
+    padding-left: 75px;
+}
+
+.about_description {
+    font-size: 25px;
+    font-family: "Koulen-Regular";
+   padding-top: 10px;
+
+}
+
+.about_with_pic {
+    width: 100%;
+    display: inline-flex;
+}
+
+.home_pic {
+    width: 70%;
+    padding-top: 50px;
 }

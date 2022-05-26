@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import './Workout.css';
 import './Home.css'
 import video from './video/gymVid.mp4'
+import picture from './photos/torso.JPG'
 
 function Home({setFavorites}) {
     const [workouts, setWorkouts] = useState([])
@@ -39,8 +40,18 @@ function Home({setFavorites}) {
           </div>
           <h1 className="workouts">Workouts</h1>
           {renderWorkouts} 
-          <div>
+          <div className="about_with_pic">
+          <div className="about_paragraph">
             <h1 className="aboutUs">About Us</h1>
+            <p className="about_description">RTZ Athletics is here to make going to the gym easier for you. We understand how difficult it can be to stay consistent with anything you do in life without a plan so we created a planner to help you with that.</p>
+          </div>
+
+          <div>
+          <img className="home_pic"
+          src={picture}
+          />
+          </div>
+          
           </div>
 
         </div>

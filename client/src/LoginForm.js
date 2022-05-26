@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Login.css'
-import image from "./photos/neckart.JPG";
+
 
 function LoginForm( {onLogin} ) {
     const [username, setUsername] = useState("");
