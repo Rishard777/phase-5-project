@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useParams } from "react-router";
 import WorkoutForm from "./WorkoutForm";
 import "./WorkoutPlan.css";
+import { Link } from "react-router-dom";
 
 function WorkoutPlan() {
     
@@ -49,8 +50,9 @@ function WorkoutPlan() {
             <h1 className="workoutPlan">{user.username}'s Workout Plan</h1>
             <div className="name_date">
               {user.workouts.map((workout) => (
-                <div key={workout.id} className="workoutDetails">
-                  name: {workout.name}
+                <div key={workout.id} className="workout_name">
+                   <Link to={`/workouts/${workout.id}`}>name: {workout.name}</Link>
+                  
                 </div>
               ))}
             </div>

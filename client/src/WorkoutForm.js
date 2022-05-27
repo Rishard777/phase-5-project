@@ -41,8 +41,9 @@ function WorkoutForm({userId, onAddWorkout} ) {
       
     return (
         <form onSubmit={handleSubmit} className="addWorkout">
-            <label className="workoutForm">Workout:</label>
+            <label className="workout_form_header">Workout:</label>
             <select
+            className="workout_select"
             id="workout_id"
             name="workout_id"
             value={workoutId}
@@ -56,15 +57,16 @@ function WorkoutForm({userId, onAddWorkout} ) {
                 ))}
                   </select>
                   <p className="workoutForm"></p>
-                  <label>Date:</label>
+                  <label className="workout_form_date">Date:</label>
                   <input
+                  className="workout_select"
                   type="date"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
                   />
                 {formErrors ? <div>{formErrors}</div> : null}
                 <p className="workoutForm"></p>
-      <button type="submit">Add To Workout Plan</button>
+      <button className="workout_plan_button" type="submit">Add To Workout Plan</button>
                 
           
         </form>
